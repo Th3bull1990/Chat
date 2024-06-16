@@ -19,7 +19,7 @@ jobs:
 
       - name: Push the Docker image
         if: ${{ github.event_name == 'push' }}
-        needs: build
+        needs: 
         run: |
           docker login $DOCKER_HUB_USERNAME:$DOCKER_HUB_PASSWORD
           docker push my-image-name:$VERSION
